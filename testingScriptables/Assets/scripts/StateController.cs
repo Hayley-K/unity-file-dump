@@ -6,15 +6,17 @@ public class StateController : MonoBehaviour {
 
     public State currentState;
     public AIStats AiStats;
-    public bool aiActive;
     public Transform eyes;
+    public State remainState;
 
+    public bool aiActive;       //in tutorial, private
 
-    public List<Transform> waypointList;
+    public List<Transform> waypointList;    //in tutorial, comes from game manager.
     [HideInInspector] public int nextWayPoint;
+    [HideInInspector] public Transform chaseTarget;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -31,6 +33,14 @@ public class StateController : MonoBehaviour {
         {
             Gizmos.color = currentState.sceneGizmoCol;
             Gizmos.DrawWireSphere(eyes.position, AiStats.lookSphereCastRadius);
+        }
+    }
+
+    public void TransitionToState(State nextState)
+    {
+        if (nextState != remainState)
+        {
+            currentState = nextState;
         }
     }
 }
