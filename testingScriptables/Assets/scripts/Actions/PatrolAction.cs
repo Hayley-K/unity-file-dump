@@ -22,8 +22,12 @@ public class PatrolAction : Action {
 
         Vector3 dest = controller.waypointList[controller.nextWayPoint].position;
         if (controller.transform.position != dest)
+        {
             controller.transform.position = Vector3.MoveTowards(controller.transform.position, dest, 0.1f);
+            controller.transform.rotation = Quaternion.LookRotation(dest);
+        }
         else
+            //change state here... to IDLE/SEARCH
             controller.nextWayPoint = (controller.nextWayPoint + 1) % controller.waypointList.Count;
 
 
