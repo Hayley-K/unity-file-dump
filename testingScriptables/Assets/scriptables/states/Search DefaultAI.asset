@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: Search DefaultAI
   m_EditorClassIdentifier: 
   transitions: []
-  actions: []
-  sceneGizmoCol: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  actions:
+  - {fileID: 11400000, guid: 38a66b7057d24a141b4a1cde69e30772, type: 2}
+  sceneGizmoCol: {r: 0, g: 0, b: 0.9411765, a: 1}
