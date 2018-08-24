@@ -14,12 +14,14 @@ public class SearchAction : Action {
     {
         //ROTATE THE PLAYER 
         float speed = 1f;
-        Quaternion platerStartRotation = controller.transform.rotation;
-        
-        //moving to a position not amount 
-        controller.transform.rotation = Quaternion.Slerp(platerStartRotation, Quaternion.Euler(0, -360, 0), Time.deltaTime * speed);
-        
-        //controller.transform.rotation = Quaternion.RotateTowards(platerStartRotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * speed);
-        //controller.transform.rotation = Quaternion.Slerp(controller.transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * speed);
+        float maxRotation = 90f;
+
+        //controller.transform.rotation = Quaternion.RotateTowards(controller.transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * speed);
+
+        controller.transform.rotation = Quaternion.Euler(0f, maxRotation * Mathf.Sin(Time.time * speed), 0f);
+
+        //need to specify a certain time?
+
+
     }
 }

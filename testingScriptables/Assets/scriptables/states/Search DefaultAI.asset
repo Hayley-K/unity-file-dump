@@ -11,7 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad96fc0a5f3cb2d4f99f3677578a2b7e, type: 3}
   m_Name: Search DefaultAI
   m_EditorClassIdentifier: 
-  transitions: []
+  transitions:
+  - decision: {fileID: 11400000, guid: 31400543aceb71e48b146de6dfc379d4, type: 2}
+    trueState: {fileID: 11400000, guid: 1b9df11a60e9b9e499f28b3a011c8769, type: 2}
+    falseState: {fileID: 11400000, guid: 50d1b55f3fca8e84d835b32c64e6551f, type: 2}
   actions:
   - {fileID: 11400000, guid: 38a66b7057d24a141b4a1cde69e30772, type: 2}
   sceneGizmoCol: {r: 0, g: 0, b: 0.9411765, a: 1}
